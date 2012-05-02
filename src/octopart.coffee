@@ -4,9 +4,8 @@ class Octopart
 
   # Internal
   @get: (path, params, fn) ->
-    url = "#{API_BASE}#{path}?"
-    for key, val of params
-      url += "#{key}=#{val}"
+    url  = "#{API_BASE}#{path}?"
+    url += "#{key}=#{val}" for key, val of params
     $.ajax
       url: url
       dataType: 'jsonp'
